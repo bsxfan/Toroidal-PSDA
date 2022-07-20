@@ -44,7 +44,7 @@ from scipy.special import gammaln, logsumexp, i0e, i1e
 from scipy.special import ive as scipy_ive
 from scipy.optimize import minimize_scalar
 
-from tpdsa.utils import k_and_logk
+from tpsda.utils import k_and_logk
 from tpsda.fisher import logCvmf3
 
 logfactorial = lambda x: gammaln(x+1)
@@ -376,7 +376,7 @@ class LogBesselI:
             kk = np.array([k])
             logkk = np.array([logk])
             return self.logCvmf(kk,logkk,exp_scale).item()
-        assert all(k >= 0)
+        assert np.all(k >= 0)
         y = np.full(k.shape,self.Cvmf_at0)
         pos = k > 0
         kpos = k[pos]
