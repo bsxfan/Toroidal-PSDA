@@ -2,7 +2,7 @@ import numpy as np
 from numpy.random import randn
 
 from subsphere.pca import retract, lengthnorm
-from psda.vmf import VMF
+from tpsda.vmf import VMF
 
 F = retract(randn(4,4))
 J, K = F[:,:2], F[:,2:]

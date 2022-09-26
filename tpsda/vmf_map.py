@@ -8,7 +8,7 @@ from tpsda.vmf import decompose
 from tpsda.utils import k_and_logk
 
 
-from psda.vmf_sampler import sample_uniform
+from tpsda.vmf_sampler import sample_uniform
 
 
 def logkappa_asymptote_intersection(dim):
@@ -188,7 +188,7 @@ def ml_estimate(n, sumx, logkappa, logC = None):
 
 if __name__ == "__main__":
     
-    from psda.vmf_onedim import gvmf, logNormConst
+    from tpsda.vmf_onedim import gvmf, logNormConst
     
     from subsphere.pca import Globe
     

@@ -1,9 +1,9 @@
 import numpy as np
 
-from psda.vmf_map import logkappa_asymptote_intersection, gvmf,\
+from tpsda.vmf_map import logkappa_asymptote_intersection, gvmf,\
                          logNormConst
                          
-from psda.vmf_sampler import sample_uniform                         
+from tpsda.vmf_sampler import sample_uniform                         
 
 def stats(dim,factor,n=1000):
     mu = sample_uniform(dim).ravel()

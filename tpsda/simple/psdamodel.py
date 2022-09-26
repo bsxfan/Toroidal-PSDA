@@ -5,7 +5,7 @@ PSDA: Probabilistic Spherical Discriminant Analysis
 import numpy as np
 from numpy import ndarray
 
-from psda.vmf import VMF, compose, decompose
+from tpsda.vmf import VMF, compose, decompose
 
 
 

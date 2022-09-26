@@ -3,7 +3,7 @@ from numpy.linalg import solve
 from numpy.random import randn
 
 from subsphere.pca import Globe
-from psda.vmf import VMF, decompose
+from tpsda.vmf import VMF, decompose
 
 
 def rsolve(num, den):

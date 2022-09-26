@@ -3,7 +3,7 @@ from numpy.random import randn
 
 from scipy.linalg import eigh, svd, sqrtm, solve
 
-from psda.vmf import VMF, decompose
+from tpsda.vmf import VMF, decompose
 
 
 

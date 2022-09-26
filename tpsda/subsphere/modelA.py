@@ -2,7 +2,7 @@ import numpy as np
 from numpy.random import randn
 
 from subsphere.pca import UnitSphere, Subsphere, Globe, retract
-from psda.vmf import VMF
+from tpsda.vmf import VMF
 
 class ModelA:
     def __init__(self,wdim, zdim, kappaw, kappax):
