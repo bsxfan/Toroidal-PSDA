@@ -18,7 +18,7 @@ def invsqrtm(C):
     matrix. The result is symmetric positive definite.
     """
     e, V = eigh(C) # C = (V*e) @ V.T
-    assert all(e>0), "input must be possitive definite"
+    assert all(e>0), "input must be positive definite"
     return (V / np.sqrt(e)) @ V.T
 
 
