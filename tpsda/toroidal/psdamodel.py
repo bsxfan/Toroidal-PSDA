@@ -232,7 +232,7 @@ class ToroidalPSDA:
                  by kappa. The m speaker variables provide between-speaker 
                  variability.
                  
-        K: list of n factor laoding matrices, one for each hidden variable
+        K: list of n factor loading matrices, one for each hidden variable
 
         gamma: (n,) VMF prior concentrations for each of the n hidden variables
         

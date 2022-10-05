@@ -8,7 +8,7 @@ Bessel-I is available in a few forms in scipy.special:
                                               still happens if x is too large
     ivp: derivatives for iv
     
-Bessel-I and even its lagrithm is available in Tensorflow.    
+Bessel-I and even its logarithm is available in Tensorflow.    
 
 Bessel-I is not available in Pytorch (except for nu = 0 and 1).     
     
@@ -81,7 +81,7 @@ def log_ive_raw(nu, k = None, logk = None):
     for even larger inputs do still have floating point representations.
         
     This underflow and NaN behaviour is 'patched up' in the class LogBesselI 
-    and its methods, which provide logrithmic input and output interfaces where 
+    and its methods, which provide logarithmic input and output interfaces where 
     needed. 
     
     
