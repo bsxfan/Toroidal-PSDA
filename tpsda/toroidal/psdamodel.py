@@ -12,7 +12,7 @@ from tpsda.vmf_map import ml_estimate as vmf_ml_estimate
 from tpsda.vmf_map import KappaPrior_KL, logkappa_asymptote_intersection
 
 from tpsda import one_hot
-
+import h5py
 
 
 class Embedding:
@@ -271,7 +271,34 @@ class ToroidalPSDA:
         else:
             self.yprior = None
             self.Ey = None
-        
+
+    def save_model(self, filename):
+        with h5py.File(filename,'w') as f:
+            f['kappa']=self.kappa
+            f['d']=np.hstack([self.E.K[i].shape[1] for i in np.arange(len(self.E.K))])
+            f['m']=self.m
+            f['gamma']=self.gamma
+            f['w']=self.E.w
+            f['F']=self.E.stack()
+            for ii,vv in enumerate(self.v):
+                f['v'+str(ii)]=vv
+
+    @classmethod
+    def load_model(cls,filename):
+        with h5py.File(filename) as f:
+            kappa=np.array(f['kappa'])
+            d=np.array(f['d'])
+            m=np.array(f['m'])
+            gamma=np.array(f['gamma'])
+            F=np.array(f['F'])
+            w=np.array(f['w'])
+            v_keys=[vv for vv in list(f.keys()) if vv[0]=='v']
+            v=[]
+            for ii in np.arange(len(v_keys)):
+                v.append(np.array(f['v'+str(ii)]))
+        K=Embedding.unstack(F,d)
+        return cls(kappa, m, w, K, gamma, v)
+
     def margloglh_term(self, t, ns=None):
         hasspeakers, haschannels = self.hasspeakers, self.haschannels
         assert hasspeakers or ns is None
